@@ -16,7 +16,7 @@ class App extends Component {
             <li>Cassio</li>
             <li>Yasmin</li>
             <li>Kelvin</li>
-            <li>Alice</li>
+            <li>Alice Cissa</li>
           </ul>
           <a
             className="App-link"
