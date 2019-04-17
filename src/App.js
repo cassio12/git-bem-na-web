@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import caozinho1 from './caozinho1.jpg';
 import './App.css';
 import logo from './logo.svg';
 
@@ -7,6 +8,13 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
+          <div className="App-feed">
+            <h3 className="App-feed-title">Cãosinhos fofinhos</h3>
+            <div className="App-feed-firstNews">
+              <img src={caozinho1} className="App-imgNoticia"></img>
+              <p>caozinho muito fofo.</p>
+            </div>
+          </div>
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
