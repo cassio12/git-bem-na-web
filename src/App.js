@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
+
+import Footer from './components/Footer';
+
 import caozinho1 from './caozinho1.jpg';
+import caozinho2 from './assets/maltes.jpeg';
 import './App.css';
 import logo from './logo.svg';
 
@@ -7,35 +11,30 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1>Bem na Web!</h1>
         <header className="App-header">
           <div className="App-feed">
-            <h3 className="App-feed-title">Cãosinhos fofinhos</h3>
+            <h3 className="App-feed-title">Cãozinhos fofinhos</h3>
             <div className="App-feed-firstNews">
-              <img src={caozinho1} className="App-imgNoticia"></img>
-              <p>caozinho muito fofo.</p>
+              <div className="App-feed-firstNews--content"> 
+                <img src={caozinho1} className="App-imgNoticia" />
+                <p>caozinho muito fofo.</p>
+              </div>
+              <div className="App-feed-firstNews--content">
+                <img src={caozinho2} className="App-imgNoticia" />
+                <p>outro caozinho muito fofo.</p>
+              </div>
             </div>
           </div>
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <ul>
-            <li>Evelyn</li>
-            <li>Cassio</li>
-            <li>Yasmin</li>
-            <li>Kelvin</li>
-            <li>Alice Cissa</li>
+          <ul className="App-nameList">
+            <li><a href="https://github.com/Evymendes">Evelyn</a></li>
+            <li><a href="https://github.com/cassio12">Cassio</a></li>
+            <li><a href="https://github.com/mymrtt">Yasmin</a></li>
+            <li><a href="https://github.com/kelvgraf">Kelvin</a></li>
+            <li><a href="https://github.com/CissaNina">Alice Cissa</a></li>
           </ul>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          <h1>Bem Na Web</h1>
         </header>
+        <Footer />
       </div>
     );
   }
