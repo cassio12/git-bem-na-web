@@ -2,11 +2,80 @@ import React, { Component } from 'react';
 
 import Footer from './components/Footer';
 
-import caozinho1 from './caozinho1.jpg';
-import caozinho2 from './assets/maltes.jpeg';
+import caozinho2 from './caozinho1.jpg';
+import caozinho3 from './assets/maltes.jpeg';
 import './App.css';
 
 class App extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      cadastro: [
+        { 
+          id: 1,
+          'name': 'Evelyn',
+          'age': 25,
+          'animal': {
+            id: 123,
+            'type': 'dog',
+            'breed': '',
+            'pic': '',
+            'whatsHappened': 'He has to worm me.'
+          }
+        },
+        {
+          id: 2,
+          'name': 'Cassio',
+          'age': 21,
+          'animal': {
+            id: 456,
+            'type': 'dog',
+            'breed': 'Lulu da Pomerânia',
+            'pic': <img src={caozinho2} className="App-imgNoticia" />,
+            'whatsHappened': 'He has a flea.'
+          }
+        },
+        {
+          id: 3,
+          'name': 'Yasmin',
+          'age': 18,
+          'animal': {
+            id: 789,
+            'type': 'dog',
+            'breed': 'maltês',
+            'pic': <img src={caozinho3} className="App-imgNoticia" />,
+            'whatsHappened': 'He is very isolated.'
+          }
+        },
+        {
+          id: 4,
+          'name': 'Kelvin',
+          'age': 23,
+          'animal': {
+            id: 101112,
+            'type': 'dog',
+            'breed': '',
+            'pic': <img src={caozinho3} className="App-imgNoticia" />,
+            'whatsHappened': 'He is vomiting a lot.'
+          }
+        },
+        {
+          id: 5,
+          'name': 'Alice Cissa',
+          'age': 25,
+          'animal': {
+            id: 131415,
+            'type': 'cat',
+            'breed': '',
+            'pic': '',
+            'whatsHappened': 'he broke the leg.'
+          }
+        }
+      ]
+    }
+  }
+
   render() {
     return (
       <div className="App">
@@ -16,22 +85,46 @@ class App extends Component {
             <h3 className="App-feed-title">Cãozinhos fofinhos</h3>
             <div className="App-feed-firstNews">
               <div className="App-feed-firstNews--content"> 
-                <img src={caozinho1} className="App-imgNoticia" />
-                <p>caozinho muito fofo.</p>
+              {
+                this.state.cadastro.map(cadastro => {
+                  return(
+                    <div>
+                      {cadastro.animal.pic}
+                    </div> 
+                  )
+                })
+              }
               </div>
               <div className="App-feed-firstNews--content">
-                <img src={caozinho2} className="App-imgNoticia" />
-                <p>outro caozinho muito fofo.</p>
+                {
+                  this.state.cadastro.map(cadastro => {
+                    return(
+                      <div>
+                        {cadastro.animal.pic}
+                      </div> 
+                    )
+                  })
+                }
               </div>
             </div>
           </div>
-          <ul className="App-nameList">
-            <li><a href="https://github.com/Evymendes">Evelyn</a></li>
-            <li><a href="https://github.com/cassio12">Cassio</a></li>
-            <li><a href="https://github.com/mymrtt">Yasmin</a></li>
-            <li><a href="https://github.com/kelvgraf">Kelvin</a></li>
-            <li><a href="https://github.com/CissaNina">Alice Cissa</a></li>
-          </ul>
+          <div className="App-cadastro">
+            {
+              this.state.cadastro.map(cadastro => {
+                return (
+                  <ul key={cadastro.id} className="App_nameList">
+                    <li>{cadastro.name}</li>
+                    <li>{cadastro.age}</li>
+                    <ul>
+                      <li>{cadastro.animal.type}</li>
+                      <li>{cadastro.animal.breed}</li>
+                      <li>{cadastro.animal.whatsHappened}</li>
+                    </ul>
+                  </ul>
+                )
+              })
+            }
+          </div>
         </header>
         <Footer />
       </div>
