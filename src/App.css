@@ -1,3 +1,10 @@
+*,
+*:after,
+*:before{
+	margin: 0; 
+	padding: 0;
+	box-sizing: border-box;
+}
 .App {
   text-align: center;
 }
@@ -6,27 +13,29 @@
   height: 40vmin;
   pointer-events: none;
 }
-
 .App-header {
-  background-color: #282c34;
+  width: 100%;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row-reverse;
   font-size: calc(10px + 2vmin);
-  padding-right:30px; 
+  background-color: #282c34;
 }
 .App-feed{
   width: 30%;
   height: 500px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
   background-color:white;
 }
 .App-feed-title{
-  color: black;
+  color: #000;
 }
 .App-imgNoticia{
-  width: 30%;
+  width: 40%;
   height: 20%;
 }
 .App-feed-firstNews{
@@ -43,4 +52,25 @@
   to {
     transform: rotate(360deg);
   }
+}
+  /* align-items: flex-start; 
+  flex-direction: column;
+  overflow-y: scroll;
+} */
+.App-feed-firstNews--content{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.App-cadastro{
+  color: #fff;
+}
+.App-nameList{
+  width: 12%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  list-style: none;
+  border: 1px solid #fff;
 }
